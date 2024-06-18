@@ -1,5 +1,8 @@
 #include <stdio.h>
 
+/// <summary>
+/// upload
+/// </summary>
 
 typedef union studentinfo {
 	char reg_num[15];
@@ -26,21 +29,21 @@ int main(void) {
 	struct dob d3[3];
 
 	for (int i = 0; i < 3; i++) {
-		printf("ì´ë¦„ì„ ìž…ë ¥í•˜ì‹œì˜¤: ");
+		printf("ÀÌ¸§À» ÀÔ·ÂÇÏ½Ã¿À: ");
 		scanf("%s", class[i].name);
-		printf("1. ì£¼ë¯¼ë“±ë¡ë²ˆí˜¸  2.í•™ë²ˆ ì¤‘ì— í•˜ë‚˜ë¥¼ ì„ íƒí•˜ì‹œì˜¤: ");
+		printf("1. ÁÖ¹Îµî·Ï¹øÈ£  2.ÇÐ¹ø Áß¿¡ ÇÏ³ª¸¦ ¼±ÅÃÇÏ½Ã¿À: ");
 		scanf("%d", &class[i].info_n);
 		if (class[i].info_n == 1) {
-			printf("ì£¼ë¯¼ë“±ë¡ë²ˆí˜¸ë¥¼ ìž…ë ¥í•˜ì‹œì˜¤(000000-0000000): ");
+			printf("ÁÖ¹Îµî·Ï¹øÈ£¸¦ ÀÔ·ÂÇÏ½Ã¿À(000000-0000000): ");
 			scanf("%s", class[i].info.reg_num);
 		}
 		else {
-			printf("í•™ë²ˆì„ ìž…ë ¥í•˜ì‹œì˜¤: ");
+			printf("ÇÐ¹øÀ» ÀÔ·ÂÇÏ½Ã¿À: ");
 			scanf("%d", &class[i].info.std_num);
 		}
 
 	
-		printf("ìƒë…„ì›”ì¼ì„ ìž…ë ¥í•˜ì‹œì˜¤(0000 00 00): ");
+		printf("»ý³â¿ùÀÏÀ» ÀÔ·ÂÇÏ½Ã¿À(0000 00 00): ");
 		scanf("%d %d %d", &d3[i].year, &d3[i].month, &d3[i].day);
 
 		class[i].d = &d3[i];
@@ -48,13 +51,13 @@ int main(void) {
 
 
 	for (int i = 0; i < 3; i++) {
-		printf("%d ì´ë¦„: %s ", i + 1, class[i].name);
+		printf("%d ÀÌ¸§: %s ", i + 1, class[i].name);
 		if (class[i].info_n == 1) {
-			printf("ì£¼ë¯¼ë“±ë¡ë²ˆí˜¸: %s ", class[i].info.reg_num);
+			printf("ÁÖ¹Îµî·Ï¹øÈ£: %s ", class[i].info.reg_num);
 		}
 		else {
-			printf("í•™ë²ˆ: %d ", class[i].info.std_num);
+			printf("ÇÐ¹ø: %d ", class[i].info.std_num);
 		}
-		printf("ìƒë…„ì›”ì¼: %dë…„ %dì›” %dì¼\n", class[i].d->year, class[i].d->month, class[i].d->day);
+		printf("»ý³â¿ùÀÏ: %d³â %d¿ù %dÀÏ\n", class[i].d->year, class[i].d->month, class[i].d->day);
 	}
 }
